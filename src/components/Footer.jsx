@@ -4,7 +4,11 @@ function Footer({ items }) {
   return (
     <footer className="status">
       You have {allItems} Items on your list, and you already packed{" "}
-      {packedItems} ({Math.round((packedItems / allItems) * 100)}%)
+      {packedItems} (
+      {allItems
+        ? Math.round((packedItems / allItems) * 100) + "%"
+        : "Nothink Packed"}
+      )
     </footer>
   );
 }
