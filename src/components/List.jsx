@@ -1,11 +1,14 @@
-const initialItems = [
-  { id: 1, description: "Passports", quantity: 2, packed: false },
-  { id: 2, description: "Socks", quantity: 12, packed: true },
-];
 import Item from "./Item";
-function List() {
-  const list = initialItems.map((item) => {
-    return <Item key={item.id} item={item} />;
+function List({ items, handleDeleteItem, handlePacked }) {
+  const list = items.map((item) => {
+    return (
+      <Item
+        key={item.id}
+        item={item}
+        handleDeleteItem={handleDeleteItem}
+        handlePacked={handlePacked}
+      />
+    );
   });
   return (
     <div className="list">
